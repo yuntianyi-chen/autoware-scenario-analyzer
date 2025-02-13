@@ -7,7 +7,6 @@ Global configurations
 # DIRECTORIES
 PROJECT_ROOT = str(Path(__file__).parent.parent)
 ADS_MAP_DIR = f'{PROJECT_ROOT}/data/maps' # Please provide the Autoware maps (.osm) here
-ADS_SCENARIO_DIR = f'{PROJECT_ROOT}/data/scenarios'
 ADS_RECORD_DIR = f'{PROJECT_ROOT}/data/records'
 TMP_RECORDS_DIR = f'/tmp/scenario_test_runner'
 

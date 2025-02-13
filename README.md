@@ -6,7 +6,6 @@ Scenario Violation Analyzer for Autoware ROS2 (.db3) Records
 |--PROJECT_ROOT
    |--data
       |--maps
-      |--scenarios
       |--records
    |--src
       |--environment
@@ -17,17 +16,17 @@ Scenario Violation Analyzer for Autoware ROS2 (.db3) Records
   ```
 
 ## Supporting Violation Types
-| Violation Type           | Non-strict Features                                               | Strict Features  |
-|--------------------------|-------------------------------------------------------------------|------------------|
-| Collision               | $\{p^{E}_{t},s^{E}_{t},h^{E}_{t},p^{O}_{t},s^{O}_{t},h^{O}_{t}\}$ | -                |
-| Fast Acceleration       | $\{p^{E}_{t},s^{E}_{t},h^{E}_{t},duration,accel\}$                | -                |
-| Hard Braking           | $\{p^{E}_{t},s^{E}_{t},h^{E}_{t},duration,decel\}$                | -                |
-| Speeding               | $\{p^{E}_{t},s^{E}_{t},h^{E}_{t},duration\}$                      | -                |
-| Unsafe Lane-change     | $\{p^{E}_{t},s^{E}_{t},h^{E}_{t},duration\}$                      | -                |
-| Lane-change in Junction | $\{p^{E}_{t},s^{E}_{t},h^{E}_{t}\}$                               | $ id_{junction}$ |
-| Module Delay           | $\{p^{E}_{t},s^{E}_{t},h^{E}_{t},duration\}$                      | $ type_{module}$ |
-| Module Malfunction     | $\{p^{E}_{t},s^{E}_{t},h^{E}_{t}\}$                               | $type_{module}$  |
-| Vehicle Paralysis      | $\{p^{E}_{t},s^{E}_{t},h^{E}_{t}\}$                               | $ type_{module}$ |
+| Violation Type           | Non-strict Features                                 | Strict Features |
+|--------------------------|-----------------------------------------------------|-----------------|
+| Collision               | $\{p^{E}_{t},s^{E}_{t},h^{E}_{t},p^{O}_{t},s^{O}_{t},h^{O}_{t}\}$ | -               |
+| Fast Acceleration       | $\{p^{E}_{t},s^{E}_{t},h^{E}_{t},duration,accel\}$  | -               |
+| Hard Braking           | $\{p^{E}_{t},s^{E}_{t},h^{E}_{t},duration,decel\}$  | -               |
+| Speeding               | $\{p^{E}_{t},s^{E}_{t},h^{E}_{t},duration\}$        | -               |
+| Unsafe Lane-change     | $\{p^{E}_{t},s^{E}_{t},h^{E}_{t},duration\}$        | -               |
+| Lane-change in Junction | $\{p^{E}_{t},s^{E}_{t},h^{E}_{t}\}$                 | $id_{junction}$ |
+| Module Delay           | $\{p^{E}_{t},s^{E}_{t},h^{E}_{t},duration\}$        | $type_{module}$ |
+| Module Malfunction     | $\{p^{E}_{t},s^{E}_{t},h^{E}_{t}\}$                 | $type_{module}$ |
+| Vehicle Paralysis      | $\{p^{E}_{t},s^{E}_{t},h^{E}_{t}\}$                 | $type_{module}$ |
 
 
 
@@ -131,7 +130,7 @@ Make sure Autoware is installed and built or Autoware dependencies `ROS2`, `lane
 ----
 
 ## Usage
-- Configure the `map_name` and `record_path` in the `run_analyzer.py` file.
+- Configure the `map_name` and `scenario_record_path` in the `run_analyzer.py` file.
 
 - Run outside the docker container:
 ```bash
