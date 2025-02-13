@@ -1,5 +1,5 @@
-# Autoware Scenario Violation Analyzer
-Scenario Violation Analyzer for Autoware ROS2 Records
+# Autoware Scenario Record Violation Analyzer
+Scenario Violation Analyzer for Autoware ROS2 (.db3) Records
 
 ### Directory Structure
 ```
@@ -16,6 +16,21 @@ Scenario Violation Analyzer for Autoware ROS2 Records
       |--run_analyzer.py
   ```
 
+## Supporting Violation Types
+| Violation Type           | Non-strict Features                                               | Strict Features  |
+|--------------------------|-------------------------------------------------------------------|------------------|
+| Collision               | $\{p^{E}_{t},s^{E}_{t},h^{E}_{t},p^{O}_{t},s^{O}_{t},h^{O}_{t}\}$ | -                |
+| Fast Acceleration       | $\{p^{E}_{t},s^{E}_{t},h^{E}_{t},duration,accel\}$                | -                |
+| Hard Braking           | $\{p^{E}_{t},s^{E}_{t},h^{E}_{t},duration,decel\}$                | -                |
+| Speeding               | $\{p^{E}_{t},s^{E}_{t},h^{E}_{t},duration\}$                      | -                |
+| Unsafe Lane-change     | $\{p^{E}_{t},s^{E}_{t},h^{E}_{t},duration\}$                      | -                |
+| Lane-change in Junction | $\{p^{E}_{t},s^{E}_{t},h^{E}_{t}\}$                               | $ id_{junction}$ |
+| Module Delay           | $\{p^{E}_{t},s^{E}_{t},h^{E}_{t},duration\}$                      | $ type_{module}$ |
+| Module Malfunction     | $\{p^{E}_{t},s^{E}_{t},h^{E}_{t}\}$                               | $type_{module}$  |
+| Vehicle Paralysis      | $\{p^{E}_{t},s^{E}_{t},h^{E}_{t}\}$                               | $ type_{module}$ |
+
+
+
 ## Prerequisite
 
 - Python == 3.10 (Tested)
@@ -26,7 +41,7 @@ Scenario Violation Analyzer for Autoware ROS2 Records
 - lanelet2 == 1.2.1
 - lanelet2_extension_python
 
-### Steps
+### Prepare Steps
 
 1. Please clone and build the `release/v1.0` of the Autoware using Docker `git checkout release/v1.0`.
 
